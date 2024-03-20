@@ -1,0 +1,35 @@
+{
+  "version": "0.1.4-alpha.0",
+  "description": "An example Neo Snap written in TypeScript.",
+  "proposedName": "Beta Neo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MetaMask/template-snap-monorepo.git"
+  },
+  "source": {
+    "shasum": "vQY7ZY3lrhhHNf2Lj/c6gZe81GrGuLMn5RiqkpNorzs=",
+    "location": {
+      "npm": {
+        "filePath": "dist/bundle.js",
+        "iconPath": "images/icon.svg",
+        "packageName": "beta-snap-neo",
+        "registry": "https://registry.npmjs.org/"
+      }
+    }
+  },
+  "initialPermissions": {
+    "snap_dialog": {},
+    "endowment:rpc": {
+      "dapps": true,
+      "snaps": false
+    },
+    "endowment:network-access": {},
+    "snap_getBip44Entropy": [
+      {
+        "coinType": 888
+      }
+    ],
+    "snap_manageState": {}
+  },
+  "manifestVersion": "0.1"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "beta-snap-wallet-adapter",
+  "version": "0.1.4-alpha.0",
+  "description": "Snap wallet adapter for Neo",
+  "license": "MIT",
+  "author": "",
+  "exports": {
+    ".": {
+      "source": "./src/index.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./types": {
+      "source": "./src/types.ts",
+      "import": "./dist/types.mjs",
+      "require": "./dist/types.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/",
+    "src/",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "yarn clean && npx tsc --build && npx tsup ./src/index.ts --env.PUBLIC_TARGET release --format esm,cjs --sourcemap",
+    "build:dev": "yarn clean && npx tsc --build && npx tsup ./src/index.ts --env.PUBLIC_TARGET dev --format esm,cjs --sourcemap",
+    "check": "tsc --noEmit",
+    "clean": "rimraf tsconfig.tsbuildinfo ./dist",
+    "dev": "yarn build:dev --watch"
+  },
+  "dependencies": {
+    "@metamask/providers": "^14.0.2",
+    "@neongd/neo-dapi": "2.0.0-alpha.35",
+    "rimraf": "^3.0.2"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  }
+}
