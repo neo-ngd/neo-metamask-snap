@@ -13,13 +13,8 @@ import type {
   SignTransactionParams,
   SignTransactionResult,
 } from '@neongd/neo-dapi';
-
 import type { SnapDapi } from './types';
-
-const SNAP_ORIGIN =
-  process.env.PUBLIC_TARGET == 'dev'
-    ? `local:http://localhost:8080`
-    : `npm:beta-snap-neo`;
+import { SNAP_ORIGIN } from './snapOrigin';
 
 export async function adminSwitchNetwork(
   network: 'MainNet' | 'TestNet',

@@ -2,6 +2,10 @@
   "name": "beta-snap-wallet-adapter",
   "version": "0.1.4-alpha.0",
   "description": "Snap wallet adapter for Neo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neo-ngd/neo-metamask-snap.git"
+  },
   "license": "MIT",
   "author": "",
   "exports": {

@@ -10,7 +10,7 @@ import logo from '@/assets/icons/logo.svg';
 import logoChrome from '@/assets/icons/logoChrome.png';
 import logoMetamask from '@/assets/icons/metamask_fox.svg';
 import background from '@/assets/landing_back.svg';
-import { defaultSnapOrigin } from '@/config/snap';
+import { allowedSnapVersion, defaultSnapOrigin } from '@/config/snap';
 import { getSnapWallet } from '@/dapi';
 import { MetamaskActions, MetaMaskContext } from '@/hooks/MetamaskContext';
 import { useStore } from '@/store';
@@ -35,7 +35,7 @@ const Home: FC = observer(() => {
 
   const login = async () => {
     try {
-      const version = '^0.1.4 || ^0.1.4-alpha';
+      const version = allowedSnapVersion;
       await connectSnap(defaultSnapOrigin, { version });
       const installedSnap = await getSnap(version);
       console.log('installedSnap', installedSnap);
