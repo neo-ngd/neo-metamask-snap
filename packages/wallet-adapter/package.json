@@ -1,6 +1,6 @@
 {
   "name": "neo-snap-wallet-adapter",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Snap wallet adapter for Neo",
   "repository": {
     "type": "git",

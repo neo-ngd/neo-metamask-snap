@@ -1,6 +1,6 @@
 {
   "name": "wallet-site",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "allow-scripts": "yarn workspace root allow-scripts",
@@ -37,7 +37,7 @@
     "dayjs": "^1.11.10",
     "mobx": "^6.12.0",
     "mobx-react": "^9.1.0",
-    "neo-snap-wallet-adapter": "^0.0.2",
+    "neo-snap-wallet-adapter": "^0.1.0",
     "next": "14.0.4",
     "next-translate": "^2.6.2",
     "qrcode.react": "^3.1.0",
