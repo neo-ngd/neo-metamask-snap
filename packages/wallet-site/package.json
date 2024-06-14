@@ -1,6 +1,6 @@
 {
   "name": "wallet-site",
-  "version": "0.1.4-alpha.0",
+  "version": "0.1.4",
   "private": true,
   "scripts": {
     "allow-scripts": "yarn workspace root allow-scripts",
@@ -32,7 +32,7 @@
     "@metamask/providers": "^14.0.2",
     "@neongd/neo-dapi": "^1.2.2",
     "axios": "^1.6.3",
-    "beta-snap-wallet-adapter": "^0.1.4-alpha.0",
+    "beta-snap-wallet-adapter": "^0.1.4",
     "bignumber.js": "^9.1.2",
     "clipboardy": "^4.0.0",
     "dayjs": "^1.11.10",
