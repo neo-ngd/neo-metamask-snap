@@ -5444,15 +5444,6 @@ before-after-hook@^2.2.0:
   resolved "https://registry.yarnpkg.com/before-after-hook/-/before-after-hook-2.2.3.tgz#c51e809c81a4e354084422b9b26bad88249c517c"
   integrity sha512-NzUnlZexiaH/46WDhANlyR2bXRopNg4F/zuSA3OpZnllCUgRaOF2znDioDWrmbNVsuZk6l9pMquQB38cfBZwkQ==
 
-beta-snap-wallet-adapter@^0.1.4:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/beta-snap-wallet-adapter/-/beta-snap-wallet-adapter-0.1.4.tgz#061920147f5cde50d49fb8e3f4e9f3645653aeb5"
-  integrity sha512-DzL8817N4YMC93lvSGESs+jBXxzMYO+gH0emRuq6VHfsYrbg7zXtdETVy/vlpyJY8MQhY2S7Mpark8JxEBUciQ==
-  dependencies:
-    "@metamask/providers" "^14.0.2"
-    "@neongd/neo-dapi" "2.0.0-alpha.35"
-    rimraf "^3.0.2"
-
 big-integer@^1.6.17:
   version "1.6.52"
   resolved "https://registry.yarnpkg.com/big-integer/-/big-integer-1.6.52.tgz#60a887f3047614a8e1bffe5d7173490a97dc8c85"
