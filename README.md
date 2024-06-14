@@ -47,3 +47,14 @@ yarn workspace wallet-site dev
 ```
 
 - Wallet Site dapp: http://localhost:8000/
+
+## Deploy Wallet Site
+
+```bash
+yarn
+
+yarn workspace neo-snap-wallet-adapter build
+
+yarn workspace wallet-site build
+yarn workspace wallet-site start
+```
