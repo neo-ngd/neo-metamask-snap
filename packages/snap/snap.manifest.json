@@ -1,5 +1,5 @@
 {
-  "version": "0.1.4",
+  "version": "0.0.1",
   "description": "An example Neo Snap written in TypeScript.",
   "proposedName": "Vital Wallet",
   "repository": {
@@ -7,12 +7,12 @@
     "url": "https://github.com/neo-ngd/neo-metamask-snap.git"
   },
   "source": {
-    "shasum": "eLhl3C94sGbyd85itZEyST7sI7srSDSymd7DhYcYYbo=",
+    "shasum": "opxGRJEow64gDAvKrzbUc5Mhno9jYUjBelug1b/Bxe4=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
         "iconPath": "images/icon.svg",
-        "packageName": "beta-snap-neo",
+        "packageName": "neo-snap",
         "registry": "https://registry.npmjs.org/"
       }
     }

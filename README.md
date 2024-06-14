@@ -29,13 +29,13 @@ yarn
 #### wallet-adapter build
 
 ```bash
-yarn workspace beta-snap-wallet-adapter build:dev
+yarn workspace neo-snap-wallet-adapter build:dev
 ```
 
 #### snap dev
 
 ```bash
-yarn workspace beta-snap-neo start
+yarn workspace neo-snap start
 ```
 
 - Snap server: http://localhost:8080/

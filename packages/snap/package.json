@@ -1,6 +1,6 @@
 {
-  "name": "beta-snap-neo",
-  "version": "0.1.4",
+  "name": "neo-snap",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/neo-ngd/neo-metamask-snap.git"
