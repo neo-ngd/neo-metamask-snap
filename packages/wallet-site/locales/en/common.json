@@ -1,0 +1,72 @@
+{
+  "components": {
+    "toast": {
+      "addressCopied": "Address copied.",
+      "transactionSuccess": "Transaction Success: ",
+      "transactionFailed": "Transaction Failed: "
+    },
+    "popups": {
+      "receive": "Receive",
+      "send": "Send",
+      "myAddress": "My Neo N3 Address",
+      "copyAddress": "Copy Address",
+      "copied": "Copied",
+      "asset": "Asset",
+      "sendTo": "Send to",
+      "paste": "Paste",
+      "address": "Address",
+      "wallet": "Wallet: ",
+      "sending": "Sending",
+      "sendSuccess": "Send Success",
+      "sendFailure": "Send Failure",
+      "close": "Close",
+      "txSending": "The transaction is in progress, you can check the final status later in the transaction history.",
+      "txSuccess": "The transaction was successful and you can view the details in the history.",
+      "txFailed": "Transaction failed. Please try again later.",
+      "txFailedReason": "Reason for error:"
+    },
+    "header": {
+      "assets": "ASSETS",
+      "nfts": "NFTS",
+      "swap": "SWAP",
+      "history": "HISTORY",
+      "settings": "SETTINGS"
+    },
+    "assetList": {
+      "title": "Asset",
+      "send": "Send",
+      "columnAsset": "Asset",
+      "columnAmount": "Amount",
+      "columnValue": "Value",
+      "empty": "No Data"
+    },
+    "activityList": {
+      "title": "History",
+      "columnDetail": "Transaction Details",
+      "columnAmount": "Amount",
+      "columnTxid": "Txid",
+      "empty": "No Data",
+      "noMore": "No More Data"
+    }
+  },
+  "index": {
+    "title": "VITAL",
+    "desc": "A User-Friendly Wallet Built For The Neo Network.",
+    "useSnap": "USE METAMASK",
+    "download": "DOWNLOAD FOR CHROME",
+    "connect": "CONNECT WALLET"
+  },
+  "wallet": {
+    "title": "this is a wallet page",
+    "send": "Send",
+    "receive": "Receive"
+  },
+
+  "error": {
+    "empty": {
+      "title": "Vital can't read the data",
+      "hint": "It seems that there is something wrong with the network. Please try refreshing.",
+      "refresh": "Refresh"
+    }
+  }
+}

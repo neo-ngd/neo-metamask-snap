@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
+  "version": "0.1.4-alpha.0",
+  "command": {
+    "publish": {
+      "allowBranch": [
+        "main",
+        "next"
+      ]
+    }
+  }
+}
