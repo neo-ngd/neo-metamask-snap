@@ -71,13 +71,13 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
         return await invokeMulti(requestParams);
       }
       case 'signMessage': {
-        return (await signMessage(requestParams)) as any;
+        return await signMessage(requestParams);
       }
       case 'signMessageWithoutSalt': {
-        return (await signMessageWithoutSalt(requestParams)) as any;
+        return await signMessageWithoutSalt(requestParams);
       }
       case 'signTransaction': {
-        return (await signTransaction(requestParams)) as any;
+        return await signTransaction(requestParams);
       }
       default:
         throw new Error('Method not found.');
