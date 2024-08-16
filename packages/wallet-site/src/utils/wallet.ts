@@ -42,6 +42,10 @@ export function isDefaultAsset(contractHash: string) {
 }
 
 export function isValidAddress(address: string) {
+  const addressPattern = /^[A-Za-z0-9]{34}$/;
+  if (!addressPattern.test(address)) {
+    return false;
+  }
   return Neon.is.address(address, DEFAULT_ADDRESS_VERSION);
 }
 
