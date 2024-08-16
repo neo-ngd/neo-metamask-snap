@@ -1,5 +1,4 @@
 import { wallet } from '@cityofzion/neon-core';
-import type { Account } from '@cityofzion/neon-core/lib/wallet';
 import { type BIP44Node, getBIP44AddressKeyDeriver } from '@metamask/key-tree';
 
 import { bip44Entropy } from '../../test/constants.test';
@@ -45,27 +44,15 @@ export async function generateNeoWalletFromPrivateKey(addressKey: BIP44Node) {
   return account;
 }
 
-function initAccountStore() {
-  let account: Account | undefined;
-  async function getAccount() {
-    if (!account) {
-      const bip44 = await getNeoBIP44PrivateKey();
-      account = await generateNeoWalletFromPrivateKey(bip44);
-    }
-    return account;
-  }
-  return { getAccount };
-}
-
-const accountStore = initAccountStore();
-
 export async function getPrivate() {
-  const account = await accountStore.getAccount();
+  const bip44 = await getNeoBIP44PrivateKey();
+  const account = await generateNeoWalletFromPrivateKey(bip44);
   return { privateKey: account.privateKey, wif: account.WIF };
 }
 
 export async function getAccountPublic() {
-  const account = await accountStore.getAccount();
+  const bip44 = await getNeoBIP44PrivateKey();
+  const account = await generateNeoWalletFromPrivateKey(bip44);
   return {
     scriptHash: account.scriptHash,
     publicKey: account.publicKey,

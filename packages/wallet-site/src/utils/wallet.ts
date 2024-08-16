@@ -49,6 +49,11 @@ export function formatNumber(numberString: string, decimals: number) {
   if (!numberString) {
     return '';
   }
+
+  if (decimals < 0 || decimals > 20) {
+    throw new Error('Invalid decimal value');
+  }
+
   // format a locale string to number string
   // FIX ME: really need this?
   const prefix = numberString
@@ -56,9 +61,8 @@ export function formatNumber(numberString: string, decimals: number) {
     .replace(/^0+(\d)/u, '$1') // delete pre 0
     .replace(/^\./u, '0.'); // replace '.' to '0.'
 
-  const pattern = `^\\d*(\\.?\\d{0,${decimals}})`;
-  // eslint-disable-next-line require-unicode-regexp
-  const result = prefix.match(RegExp(pattern));
+  const pattern = new RegExp(`^\\d*(\\.?\\d{0,${decimals}})`);
+  const result = prefix.match(pattern);
   return result ? result[0] : '';
 }
 
