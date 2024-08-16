@@ -45,23 +45,6 @@ export function isValidAddress(address: string) {
   return Neon.is.address(address, DEFAULT_ADDRESS_VERSION);
 }
 
-export function formatNumber(numberString: string, decimals: number) {
-  if (!numberString) {
-    return '';
-  }
-  // format a locale string to number string
-  // FIX ME: really need this?
-  const prefix = numberString
-    .replace(/[^\d^.?]+/gu, '') // delete character not number or dot
-    .replace(/^0+(\d)/u, '$1') // delete pre 0
-    .replace(/^\./u, '0.'); // replace '.' to '0.'
-
-  const pattern = `^\\d*(\\.?\\d{0,${decimals}})`;
-  // eslint-disable-next-line require-unicode-regexp
-  const result = prefix.match(RegExp(pattern));
-  return result ? result[0] : '';
-}
-
 export function getScriptHashFromAddress(address: string) {
   if (isValidAddress(address)) {
     return `0x${wallet.getScriptHashFromAddress(address)}`;
