@@ -44,28 +44,19 @@ class SnapSigningProvider extends SigningNetworkProvider {
   }
 }
 
-function initSigningProvider() {
-  let signingProvider: SnapSigningProvider | undefined;
-  async function getSigningProvider() {
-    if (!signingProvider) {
-      const account = await getPrivate();
-      signingProvider = new SnapSigningProvider(
-        appNetworkConfigs,
-        defaultAppState.network,
-        account.wif,
-        undefined,
-        {
-          axiosConfig: {
-            adapter: fetchAdapter,
-          },
-        },
-      );
-    }
-    return signingProvider;
-  }
-  return { getSigningProvider };
+async function getSigningProvider() {
+  const account = await getPrivate();
+  return new SnapSigningProvider(
+    appNetworkConfigs,
+    defaultAppState.network,
+    account.wif,
+    undefined,
+    {
+      axiosConfig: {
+        adapter: fetchAdapter,
+      },
+    },
+  );
 }
-
-const { getSigningProvider } = initSigningProvider();
 
 export { getSigningProvider };
