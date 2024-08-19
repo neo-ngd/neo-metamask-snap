@@ -14,3 +14,5 @@ export const bip44Entropy: JsonBIP44CoinTypeNode = {
   coin_type: 888,
   path: "m / bip32:44' / bip32:888'",
 };
+
+test.skip('skip', () => {});

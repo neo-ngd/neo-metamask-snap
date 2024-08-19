@@ -9,9 +9,6 @@ export const defaultAppState = {
 } as const;
 
 export async function getAppState(): Promise<AppState> {
-  if (process.env.NODE_ENV === 'test') {
-    return defaultAppState;
-  }
   const state = await snap.request({
     method: 'snap_manageState',
     params: { operation: 'get' },
