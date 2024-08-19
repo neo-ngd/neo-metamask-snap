@@ -7,7 +7,7 @@
     "url": "https://github.com/neo-ngd/neo-metamask-snap.git"
   },
   "source": {
-    "shasum": "/CU7F6qWSABMgG+DIi28fVPm7wn7bI7qy8DtH0x5WsE=",
+    "shasum": "gpEfalyV/HTfVOB8PQ/b+CJm6/GxqP4TiUfl4qIIuz0=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",

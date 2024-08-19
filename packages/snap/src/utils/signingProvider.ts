@@ -10,8 +10,9 @@ import type { PopulateTransactionParams } from '../types';
 import { environments } from './constants';
 import type { NetworkEnv } from './env';
 import { getPrivate } from './keyPair';
+import { getSnapBip44Node } from './keyPair';
 
-const appNetworkConfigs: {
+export const appNetworkConfigs: {
   name: NetworkEnv;
   nodeUrl: string;
   magicNumber: number;
@@ -28,7 +29,7 @@ const appNetworkConfigs: {
   },
 ];
 
-class SnapSigningProvider extends SigningNetworkProvider {
+export class SnapSigningProvider extends SigningNetworkProvider {
   constructor(
     networkConfigs: NetworkConfig[],
     defaultNetwork: string,
@@ -45,7 +46,8 @@ class SnapSigningProvider extends SigningNetworkProvider {
 }
 
 async function getSigningProvider() {
-  const account = await getPrivate();
+  const bip44Node = await getSnapBip44Node();
+  const account = await getPrivate(bip44Node);
   return new SnapSigningProvider(
     appNetworkConfigs,
     defaultAppState.network,
