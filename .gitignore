@@ -78,3 +78,4 @@ node_modules/
 
 #lerna
 .nx/cache
+.nx/workspace-data
