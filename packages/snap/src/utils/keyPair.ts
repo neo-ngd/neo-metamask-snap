@@ -1,37 +1,30 @@
-import { wallet } from '@cityofzion/neon-core';
-import { type BIP44Node, getBIP44AddressKeyDeriver } from '@metamask/key-tree';
+import { wallet } from "@cityofzion/neon-core";
+import {
+  BIP44CoinTypeNode,
+  getBIP44AddressKeyDeriver,
+} from '@metamask/key-tree';
 
-import { bip44Entropy } from '../../test/constants.test';
-
-export async function getAddressKeyDeriver() {
+export async function getSnapBip44Node() {
   // coinType: BTC 0, ETH 60, NEO 888
   // see https://github.com/satoshilabs/slips/blob/master/slip-0044.md
   // force to use NEO
-  let bip44Node;
-  if (process.env.NODE_ENV == 'test') {
-    bip44Node = bip44Entropy;
-  } else {
-    bip44Node = await snap.request({
-      method: 'snap_getBip44Entropy',
-      params: {
-        coinType: 888,
-      },
-    });
-  }
+  const json = await snap.request({
+    method: 'snap_getBip44Entropy',
+    params: {
+      coinType: 888,
+    },
+  });
+  return BIP44CoinTypeNode.fromJSON(json, 888)
+}
 
+export async function getNeoAccount(bip44Node: BIP44CoinTypeNode) {
   // `m / purpose' / coin_type' / account' / change / address_index`
   // `m / 44' / 888' / 0' / 0 / {index}`
-  return getBIP44AddressKeyDeriver(bip44Node);
-}
+  const deriveNeoAddress = await getBIP44AddressKeyDeriver(bip44Node)
+  const addressKey = await deriveNeoAddress(0);
 
-export async function getNeoBIP44PrivateKey() {
-  const deriveNeoAddress = await getAddressKeyDeriver();
-  const addressKey0 = await deriveNeoAddress(0);
-  return addressKey0;
-}
-
-export async function generateNeoWalletFromPrivateKey(addressKey: BIP44Node) {
   const { privateKey } = addressKey;
+
   if (!privateKey) {
     throw new Error('Invalid private key');
   }
@@ -44,15 +37,13 @@ export async function generateNeoWalletFromPrivateKey(addressKey: BIP44Node) {
   return account;
 }
 
-export async function getPrivate() {
-  const bip44 = await getNeoBIP44PrivateKey();
-  const account = await generateNeoWalletFromPrivateKey(bip44);
-  return { privateKey: account.privateKey, wif: account.WIF };
+export async function getPrivate(bip44Node: BIP44CoinTypeNode) {
+  const account = await getNeoAccount(bip44Node);
+  return { privateKey: account.privateKey, wif: account.WIF }; 
 }
 
-export async function getAccountPublic() {
-  const bip44 = await getNeoBIP44PrivateKey();
-  const account = await generateNeoWalletFromPrivateKey(bip44);
+export async function getAccountPublic(bip44Node: BIP44CoinTypeNode) {
+  const account = await getNeoAccount(bip44Node);
   return {
     scriptHash: account.scriptHash,
     publicKey: account.publicKey,

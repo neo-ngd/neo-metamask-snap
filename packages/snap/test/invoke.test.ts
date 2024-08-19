@@ -1,11 +1,32 @@
 import { JsonRpcError } from '@neongd/json-rpc';
 import type { InvokeParams, InvokeResult } from '@neongd/neo-dapi';
-
+import fetchAdapter from 'konfig-axios-fetch-adapter';
 import { decimalToInteger } from '../src/utils/convertors';
-import { getSigningProvider } from '../src/utils/signingProvider';
+import {
+  appNetworkConfigs,
+  SnapSigningProvider,
+} from '../src/utils/signingProvider';
+import { BIP44CoinTypeNode } from '@metamask/key-tree';
+import { bip44Entropy } from './constants.test';
+import { getPrivate } from '../src/utils/keyPair';
+import { defaultAppState } from '../src/state';
 
 async function executeInvoke(params: InvokeParams) {
-  const signingProvider = await getSigningProvider();
+  const bip44Node = await BIP44CoinTypeNode.fromJSON(bip44Entropy, bip44Entropy.coin_type);
+  const account = await getPrivate(bip44Node);
+
+  const signingProvider = new SnapSigningProvider(
+    appNetworkConfigs,
+    defaultAppState.network,
+    account.wif,
+    undefined,
+    {
+      axiosConfig: {
+        adapter: fetchAdapter,
+      },
+    },
+  )
+
   const dry = await signingProvider.prepareTransaction({
     invocations: [
       {
