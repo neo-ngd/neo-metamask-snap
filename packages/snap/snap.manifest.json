@@ -1,5 +1,5 @@
 {
-  "version": "0.1.2-alpha.0",
+  "version": "0.1.2-alpha.1",
   "description": "A Snap for making transactions on the Neo blockchain",
   "proposedName": "Vital Wallet",
   "repository": {
@@ -7,7 +7,7 @@
     "url": "https://github.com/neo-ngd/neo-metamask-snap.git"
   },
   "source": {
-    "shasum": "gpEfalyV/HTfVOB8PQ/b+CJm6/GxqP4TiUfl4qIIuz0=",
+    "shasum": "Knpkz7iV7hTCMLUe2xNix/HmkXMIKmzIHoVJsAClCSU=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
