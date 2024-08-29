@@ -30,19 +30,23 @@ export const ActivityCell: FC<Props> = observer(props => {
   const [decimals, setDecimals] = useState(0);
 
   useEffect(() => {
-    const result = assetStore.assets.find(
-      a => a.contractHash === props.record.transfer.contract,
-    );
-    setAsset(result);
+    try {
+      const result = assetStore.assets.find(
+        a => a.contractHash === props.record.transfer.contract,
+      );
+      setAsset(result);
 
-    const { transfer } = props.record;
-    const gasReward = !transfer.from && transfer.contract === GasContractHash;
-    const assetDecimals = result
-      ? result.decimals
-      : gasReward
-      ? DEFAULT_GAS_DECIMAL
-      : 0;
-    setDecimals(assetDecimals);
+      const { transfer } = props.record;
+      const gasReward = !transfer.from && transfer.contract === GasContractHash;
+      const assetDecimals = result
+        ? result.decimals
+        : gasReward
+        ? DEFAULT_GAS_DECIMAL
+        : 0;
+      setDecimals(assetDecimals ?? 0);
+    } catch (error) {
+      console.error('Error fetching asset data', error);
+    }
   }, [assetStore.assets, props.record]);
 
   const calculateSymbol = () => {
