@@ -4,7 +4,6 @@ import { observer } from 'mobx-react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import useTranslation from 'next-translate/useTranslation';
-import type { FC } from 'react';
 import { useContext, useEffect } from 'react';
 import logo from '@/assets/icons/logo.svg';
 import logoChrome from '@/assets/icons/logoChrome.png';
@@ -18,7 +17,7 @@ import { connectSnap, getSnap } from '@/utils/snap';
 import { setAppNetwork } from '@/utils/storage';
 import { HTTPS_VITAL_CHROME_STORE } from '@/utils/values';
 
-const Home: FC = observer(() => {
+const Home = observer(() => {
   const router = useRouter();
   const { t } = useTranslation();
   const { walletStore } = useStore();

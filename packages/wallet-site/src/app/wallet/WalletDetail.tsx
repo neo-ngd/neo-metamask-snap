@@ -5,7 +5,6 @@ import clipboard from 'clipboardy';
 import { observer, useLocalObservable } from 'mobx-react';
 import Image from 'next/image';
 import useTranslation from 'next-translate/useTranslation';
-import type { FC } from 'react';
 import { toast } from 'react-toastify';
 import iconCopy from '@/assets/icons/copy.svg';
 import iconInvisible from '@/assets/icons/invisible.svg';
@@ -22,7 +21,7 @@ import { ReceivePopup } from '../components/popups/ReceivePopup';
 import { SendPopup } from '../components/popups/SendPopup';
 import { TransactionPopup } from '../components/popups/TransactionPopup';
 
-export const WalletDetail: FC = observer(() => {
+export const WalletDetail = observer(() => {
   const { t } = useTranslation();
   const { assetStore, walletStore, uiStore } = useStore();
 
