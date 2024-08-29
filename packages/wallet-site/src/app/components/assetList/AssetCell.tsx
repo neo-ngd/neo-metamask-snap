@@ -63,7 +63,7 @@ export const AssetCell: FC<Props> = observer(props => {
       a => a.contractHash === props.balance.contractHash,
     );
     if (!asset) {
-      return UNKNOWN_SYMBOL;
+      return <div>Asset not found</div>;
     }
 
     const amountNumber = new BigNumber(props.balance.amount);

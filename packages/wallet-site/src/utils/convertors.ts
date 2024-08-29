@@ -9,16 +9,20 @@ export function isValidHex(hexStr: string) {
 }
 
 export function base64ToHex(base64: string) {
-  const b = Buffer.from(base64, 'base64');
-  return b.toString('hex');
+  try {
+    const b = Buffer.from(base64, 'base64');
+    return b.toString('hex');
+  } catch (error) {
+    throw new Error('Invalid base64 input');
+  }
 }
 
 export function toStandardHex(str: string | HexString) {
-  const hexStr = str instanceof HexString ? str.toString() : str;
-  if (!isValidHex(hexStr)) {
-    throw new Error('input param is not a valid hex string');
+  const hex = str instanceof HexString ? str.toString() : str;
+  if (typeof hex !== 'string' || !isValidHex(hex)) {
+    throw new Error('Input param is not a valid hex string');
   }
-  return hexStr.replace(/0[xX]/u, '').toLowerCase();
+  return hex.replace(/0[xX]/, '').toLowerCase();
 }
 
 export function integerToDecimal(integer: string, unit: number): string | null {
