@@ -1,10 +1,9 @@
 'use client';
 
 import { observer } from 'mobx-react';
-import type { FC } from 'react';
 import { useStore } from '@/store';
 
-export const PageCover: FC = observer(() => {
+export const PageCover = observer(() => {
   const { uiStore } = useStore();
 
   const clearCover = () => {
