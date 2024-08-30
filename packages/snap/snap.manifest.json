@@ -7,12 +7,12 @@
     "url": "https://github.com/neo-ngd/neo-metamask-snap.git"
   },
   "source": {
-    "shasum": "lZ+y+TypXAaf7lNqqU8I95WI8x6WZl38BTpAPy8xJLs=",
+    "shasum": "yDVR6NTO/MJZlVHykI2aWPI5rBhnUm+x1us/7sbF2aE=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
         "iconPath": "images/icon.svg",
-        "packageName": "neo-snap",
+        "packageName": "@vital-wallet/neo-snap",
         "registry": "https://registry.npmjs.org/"
       }
     }

@@ -1,6 +1,6 @@
 import { type Dapi } from '@neongd/neo-dapi';
 
-import { adminSwitchNetwork, NeoSnapAdapter } from 'neo-snap-wallet-adapter';
+import { adminSwitchNetwork, NeoSnapAdapter } from '@vital-wallet/neo-snap-wallet-adapter';
 import { ValidationError } from '@/utils/errors';
 
 type InputInvokeParams = Parameters<Dapi['invoke']>[0];
