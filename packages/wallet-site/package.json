@@ -1,6 +1,6 @@
 {
   "name": "wallet-site",
-  "version": "0.1.2-alpha.1",
+  "version": "0.1.2-alpha.2",
   "private": true,
   "scripts": {
     "allow-scripts": "yarn workspace root allow-scripts",
