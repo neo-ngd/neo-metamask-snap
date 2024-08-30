@@ -24,14 +24,14 @@
     "version": "yarn build:clean && git add snap.manifest.json"
   },
   "dependencies": {
-    "@cityofzion/neon-core": "^5.5.1",
-    "@metamask/key-tree": "^9.0.0",
-    "@metamask/snaps-sdk": "^1.2.0",
+    "@cityofzion/neon-core": "5.5.1",
+    "@metamask/key-tree": "9.0.0",
+    "@metamask/snaps-sdk": "1.2.0",
     "@neongd/json-rpc": "2.0.1",
     "@neongd/neo-dapi": "2.0.1",
-    "bignumber.js": "^9.1.2",
-    "buffer": "^6.0.3",
-    "crypto": "^1.0.1",
+    "bignumber.js": "9.1.2",
+    "buffer": "6.0.3",
+    "crypto": "1.0.1",
     "konfig-axios-fetch-adapter": "1.6.4"
   },
   "devDependencies": {
