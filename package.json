@@ -8,7 +8,7 @@
     "build": "lerna run --no-private build",
     "lerna-publish": "lerna publish from-package",
     "lerna-publish:alpha": "lerna publish from-package --dist-tag alpha --yes",
-    "lerna-version": "lerna version --force-publish",
+    "lerna-version": "lerna version",
     "lerna-version:alpha": "lerna version prerelease --yes",
     "prepack": "lerna run --no-private build",
     "release": "run-s lerna-version lerna-publish",
