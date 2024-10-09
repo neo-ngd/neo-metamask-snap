@@ -10,4 +10,4 @@ export const defaultSnapOrigin =
   // eslint-disable-next-line no-restricted-globals
   process.env.NEXT_PUBLIC_SNAP_ORIGIN ?? `local:http://localhost:8080`;
 
-export const allowedSnapVersion = '^0.1.0 || ^0.1.2-alpha';
+export const allowedSnapVersion = '^0.1.2';
